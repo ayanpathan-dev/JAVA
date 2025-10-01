@@ -12,9 +12,13 @@ class Accept {
     //Prime(arr, size);
     // DisplayData(arr,size);
     //AddOdd(arr,size);
+    //sum(arr,size);
     //Factorial(arr,size);
     //MaxNthPrime(arr, size);
-        MinNthPrime(arr, size);
+    //MinNthPrime(arr, size);
+    //Occurrence(arr);
+    //MaxNthNumber(arr);
+    MinNthNumber(arr);
 
     sc.close();
   }
@@ -168,7 +172,77 @@ class Accept {
         System.out.print(prime[i]);
       }
       System.out.println("Nth Max Prime Number is" +prime[nth-1]);
+    } 
+
+    public static void sum(int[] a,int size){
+    int sum=0;
+    for(int i=0;i<a.length;i++){
+        sum= sum+a[i];
     }
+    System.out.println(sum);
+  }
+
+  public static void Occurrence(int[] a){
+    System.out.println("enter number");
+    Scanner sc =new Scanner(System.in);
+    int num = sc.nextInt();
+    int cnt =0;
+    for(int i=0;i<a.length;i++){
+       if (a[i]==num) {
+        cnt++;
+       }
+    }
+    if (cnt==0) {
+      System.out.println("NOT FOUND");
+    }else{
+      System.out.println("FOUND "+num +" Occurrence "+cnt);
+    }
+    
+  }
+
+  public static void MaxNthNumber(int[] a){
+    System.out.println("enter number");
+    Scanner sc =new Scanner(System.in);
+    int num = sc.nextInt();
+    for(int i=0;i<a.length;i++){
+        for(int j=i+1;j<a.length;j++){
+             if (a[i]<a[j]) {
+                 int temp =a[i];
+                 a[i]=a[j];
+                 a[j]=temp;
+             }
+            } 
+         }
+
+
+        System.out.println("max"+num+"th number is"+a[num-1]);
+
+  
+    
+  }
+
+
+  public static void MinNthNumber(int[] a){
+    System.out.println("enter number");
+    Scanner sc =new Scanner(System.in);
+    int num = sc.nextInt();
+    for(int i=0;i<a.length;i++){
+        for(int j=i+1;j<a.length;j++){
+             if (a[i]>a[j]) {
+                 int temp =a[i];
+                 a[i]=a[j];
+                 a[j]=temp;
+             }
+            } 
+         }
+
+
+        System.out.println("min"+num+"th number is "+a[num-1]);
+
+  
+    
+  }
+  
       
 
   }
