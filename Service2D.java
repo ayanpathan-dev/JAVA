@@ -176,6 +176,38 @@ public static void Identity(int[][] a,int sizeR,int sizeC){
       
     
    }
+		public static int[][] rotateRow(int[][] arr) {
+		// TODO Auto-generated method stub
+		int temp[][] = new int[arr.length][arr[0].length];
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr.length;j++) {
+				temp[i]=temp[i+1];
+				
+			}
+		}
+		int [] temp1 = temp[0];
+		for(int i=0;i<temp.length-1;i++) {
+			temp[i]=temp[i+1];
+		}
+		temp[temp.length-1]=temp1;
+
+		return temp;
+	}
+
+	public static int[][] rotateCol(int[][] arr) {
+		// TODO Auto-generated method stub
+		int temp[][] = new int[arr.length][arr[0].length];
+		for (int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr[0].length;i++) {
+				temp[i][j]=arr[i][j];
+			}
+		}
+		
+		int [] temp1 =new int[temp.length];
+		for(int i=0; i<temp1.length;i++) {
+			temp1[i]=temp[i][temp[0].length-1];
+		}
 
 }
+
 
